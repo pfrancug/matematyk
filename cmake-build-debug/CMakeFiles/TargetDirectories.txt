@@ -1,0 +1,3 @@
+/Users/francesco/Desktop/C/matematyk/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/francesco/Desktop/C/matematyk/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/francesco/Desktop/C/matematyk/cmake-build-debug/CMakeFiles/matematyk.dir
