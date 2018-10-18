@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2018.2.4\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Matematyk.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\Matematyk.dir/objects.a @CMakeFiles\Matematyk.dir\objects1.rsp
-C:\MinGW\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\Matematyk.dir/objects.a -Wl,--no-whole-archive  -o Matematyk.exe -Wl,--out-implib,libMatematyk.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Matematyk.dir\linklibs.rsp

@@ -1,3 +1,0 @@
-C:/Users/A21411/Desktop/Projekty/Matematyk/cmake-build-debug/CMakeFiles/Matematyk.dir
-C:/Users/A21411/Desktop/Projekty/Matematyk/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/A21411/Desktop/Projekty/Matematyk/cmake-build-debug/CMakeFiles/rebuild_cache.dir
