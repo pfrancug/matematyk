@@ -18,12 +18,34 @@ void main() {
     );
     scanf(" %i", &wybor);
     if (wybor == 1) {
-        printf("Wybrano opcję nr 1");
+        printf("Wybrano opcję nr 1\n");
         kalkulator();
     } else if (wybor == 2) {
-        printf("Wybrano opcję nr 2");
+        printf("Wybrano opcję nr 2\n");
+
     } else if (wybor == 3) {
-        printf("Wybrano opcję nr 3");
+        printf("Wybrano opcję nr 3\n");
+
+        double a1, a2, b1, b2, c1, c2, w , wx, wy;
+
+        printf("Wyznacznik macierzy drugiego stopnia\n");
+        printf("Podaj a1: "); scanf(" %lf", &a1);
+        printf("Podaj a2: "); scanf(" %lf", &a2);
+        printf("Podaj b1: "); scanf(" %lf", &b1);
+        printf("Podaj b2: "); scanf(" %lf", &b2);
+        printf("Podaj c1: "); scanf(" %lf", &c1);
+        printf("Podaj c2: "); scanf(" %lf", &c1);
+
+        double wyznacznik(double x1, double x2, double x3, double x4){
+            return x1 * x2 - x3 * x4;
+        }
+
+        w = wyznacznik(a1, b2 , b1, a2);
+        wx = wyznacznik(c1 , b2, c2, b1);
+        wy = wyznacznik(a1, c2, c1, a2);
+
+
+
     } else if (wybor == 9) {
         printf("Kończenie pracy programu...");
     } else {
