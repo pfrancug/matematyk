@@ -6,6 +6,16 @@ void kalkulator_pobierzDane(double *kalkulator_A, double *kalkulator_B, char *ka
 
 void kalkulator_wyniki(double kalkulator_A, double kalkulator_B, char kalkulator_znak, int *kalkulator_wybor);
 
+void wyznaczniki();
+
+void wyznaczniki_pobierzDane(double *a1, double *a2, double *b1, double *b2, double *c1, double *c2);
+
+void wyznaczniki_obliczenia(double a1, double a2, double b1, double b2, double c1, double c2, double *w, double *wx,
+                            double *wy);
+
+void
+wyznaczniki_wyniki(double a1, double a2, double b1, double b2, double c1, double c2, double w, double wx, double wy);
+
 void main() {
     int wybor;
     printf(
@@ -25,45 +35,7 @@ void main() {
 
     } else if (wybor == 3) {
         printf("Wybrano opcję nr 3\n");
-
-        double a1, a2, b1, b2, c1, c2, w, wx, wy;
-
-        printf("Wyznacznik macierzy drugiego stopnia\n");
-        printf("Podaj a1: ");
-        scanf(" %lf", &a1);
-        printf("Podaj b1: ");
-        scanf(" %lf", &b1);
-        printf("Podaj c1: ");
-        scanf(" %lf", &c1);
-        printf("Podaj a2: ");
-        scanf(" %lf", &a2);
-        printf("Podaj b2: ");
-        scanf(" %lf", &b2);
-        printf("Podaj c2: ");
-        scanf(" %lf", &c2);
-
-        double wyznacznik(double x1, double x2, double x3, double x4) {
-            return x1 * x2 - x3 * x4;
-        }
-
-        w = wyznacznik(a1, b2, b1, a2);
-        wx = wyznacznik(c1, b2, c2, b1);
-        wy = wyznacznik(a1, c2, c1, a2);
-
-        printf(
-                "Twój układ równań to:\n"
-                "%.2lfX * %.2lfY = %.2lf\n"
-                "%.2lfX * %.2lfY = %.2lf\n", a1, b1, c1, a2, b2, c2
-        );
-
-        if (w) {
-            printf("Układ ma jedno rozwiązanie x = %.2lf, y = %.2lf\n", wx / w, wy / w);
-        } else if (!w && !wx && !wy) {
-            printf("Układ ma nieskończenie wiele rozwiązań\n");
-        } else if ((!w && wx) || (!w && wy)) {
-            printf("Układ jest sprzeczny\n");
-        }
-
+        wyznaczniki();
     } else if (wybor == 9) {
         printf("Kończenie pracy programu...");
     } else {
@@ -79,6 +51,60 @@ void main() {
         } else {
             printf("Kończenie pracy programu...");
         }
+    }
+}
+
+void wyznaczniki() {
+    double a1, a2, b1, b2, c1, c2, w, wx, wy;
+
+    wyznaczniki_pobierzDane(&a1, &a2, &b1, &b2, &c1, &c2);
+
+    wyznaczniki_obliczenia(a1, a2, b1, b2, c1, c2, &w, &wx, &wy);
+
+    wyznaczniki_wyniki(a1, a2, b1, b2, c1, c2, w, wx, wy);
+}
+
+void wyznaczniki_pobierzDane(double *a1, double *a2, double *b1, double *b2, double *c1, double *c2) {
+    printf("Wyznacznik macierzy drugiego stopnia\n");
+    printf("Podaj a1: ");
+    scanf(" %lf", a1);
+    printf("Podaj b1: ");
+    scanf(" %lf", b1);
+    printf("Podaj c1: ");
+    scanf(" %lf", c1);
+    printf("Podaj a2: ");
+    scanf(" %lf", a2);
+    printf("Podaj b2: ");
+    scanf(" %lf", b2);
+    printf("Podaj c2: ");
+    scanf(" %lf", c2);
+}
+
+void wyznaczniki_obliczenia(double a1, double a2, double b1, double b2, double c1, double c2, double *w, double *wx,
+                            double *wy) {
+    double wyznacznik(double x1, double x2, double x3, double x4) {
+        return x1 * x2 - x3 * x4;
+    }
+
+    (*w) = wyznacznik(a1, b2, b1, a2);
+    (*wx) = wyznacznik(c1, b2, c2, b1);
+    (*wy) = wyznacznik(a1, c2, c1, a2);
+}
+
+void
+wyznaczniki_wyniki(double a1, double a2, double b1, double b2, double c1, double c2, double w, double wx, double wy) {
+    printf(
+            "Twój układ równań to:\n"
+            "%.2lfX * %.2lfY = %.2lf\n"
+            "%.2lfX * %.2lfY = %.2lf\n", a1, b1, c1, a2, b2, c2
+    );
+
+    if (w) {
+        printf("Układ ma jedno rozwiązanie x = %.2lf, y = %.2lf\n", wx / w, wy / w);
+    } else if (!w && !wx && !wy) {
+        printf("Układ ma nieskończenie wiele rozwiązań\n");
+    } else if ((!w && wx) || (!w && wy)) {
+        printf("Układ jest sprzeczny\n");
     }
 }
 
